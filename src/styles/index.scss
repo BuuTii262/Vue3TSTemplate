@@ -6,31 +6,31 @@
 
 @import "./modules/theme_colors.scss";
 
-// @font-face {
-//   font-family: "DIN";
-//   src: url(@/assets/fonts/din-regular-webfont.ttf),
-//     url(@/assets/fonts/din-regular-webfont.woff),
-//     url(@/assets/fonts/din-regular-webfont.woff2);
-// }
+@font-face {
+  font-family: "DIN";
+  src: url(@/assets/fonts/din-regular-webfont.ttf),
+    url(@/assets/fonts/din-regular-webfont.woff),
+    url(@/assets/fonts/din-regular-webfont.woff2);
+}
 
-// @font-face {
-//   font-family: "SF Pro Display";
-//   src: url(@/assets/fonts/sfprodisplay-regular-webfont.ttf),
-//     url(@/assets/fonts/sfprodisplay-regular-webfont.woff),
-//     url(@/assets/fonts/sfprodisplay-regular-webfont.woff2);
-// }
+@font-face {
+  font-family: "SF Pro Display";
+  src: url(@/assets/fonts/sfprodisplay-regular-webfont.ttf),
+    url(@/assets/fonts/sfprodisplay-regular-webfont.woff),
+    url(@/assets/fonts/sfprodisplay-regular-webfont.woff2);
+}
 
-// @font-face {
-//   font-family: "SF Pro";
-//   src: url(@/assets/fonts/sf-pro-text-regular-webfont.ttf),
-//     url(@/assets/fonts/sf-pro-text-regular-webfont.woff),
-//     url(@/assets/fonts/sf-pro-text-regular-webfont.woff2);
-// }
+@font-face {
+  font-family: "SF Pro";
+  src: url(@/assets/fonts/sf-pro-text-regular-webfont.ttf),
+    url(@/assets/fonts/sf-pro-text-regular-webfont.woff),
+    url(@/assets/fonts/sf-pro-text-regular-webfont.woff2);
+}
 
-// @font-face {
-//   font-family: "BigruixianBlackGB";
-//   src: url(@/assets/fonts/BigruixianBlackGBV1.0.ttf);
-// }
+@font-face {
+  font-family: "BigruixianBlackGB";
+  src: url(@/assets/fonts/BigruixianBlackGBV1.0.ttf);
+}
 
 :root {
   --default-color: var(--theme-primary);

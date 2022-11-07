@@ -56,7 +56,7 @@
 
 @mixin popover($placement, $args...) {
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 0;
     height: 0;
@@ -73,28 +73,28 @@
   }
 
   &::after {
-    @if ($placement == 'top') {
+    @if ($placement == "top") {
       border-bottom-width: 0;
       border-top-color: currentColor;
       bottom: 0;
       left: 50%;
       transform: translate(-50%, 100%);
     }
-    @if ($placement == 'bottom') {
+    @if ($placement == "bottom") {
       border-top-width: 0;
       border-bottom-color: currentColor;
       top: 0;
       left: 50%;
       transform: translate(-50%, -100%);
     }
-    @if ($placement == 'left') {
+    @if ($placement == "left") {
       border-right-width: 0;
       border-left-color: currentColor;
       right: 0;
       top: 50%;
       transform: translate(100%, -50%);
     }
-    @if ($placement == 'right') {
+    @if ($placement == "right") {
       border-left-width: 0;
       border-right-color: currentColor;
       left: 0;
