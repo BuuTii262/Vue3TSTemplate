@@ -15,6 +15,7 @@ export default ({ command, mode, ssrBuild }: ConfigEnv): UserConfig => {
       },
     },
     plugins: [vue(), vueJsx({})],
+
     css: {
       preprocessorOptions: {
         less: {
@@ -29,7 +30,7 @@ export default ({ command, mode, ssrBuild }: ConfigEnv): UserConfig => {
       },
     },
     server: {
-      // host: "0.0.0.0",
+      host: "0.0.0.0",
       port: 4000,
       open: true,
     },
