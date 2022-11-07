@@ -1,0 +1,85 @@
+@charset "UTF-8";
+@use "sass:math";
+
+$design-width: 828;
+
+$design-dpr: 2;
+
+$blocks: 10;
+
+$min-device-width: 320px;
+
+$max-device-width: 828px;
+
+@mixin root-font-size() {
+  font-size: math.div(100vw, $blocks);
+  body {
+    @include container-min-width();
+  }
+  @media screen and (max-width: $min-device-width) {
+    font-size: math.div($min-device-width, $blocks);
+  }
+  &[data-content-max] {
+    body[data-content-max] {
+      @include container-max-width();
+    }
+    @media screen and (min-width: $max-device-width) {
+      font-size: math.div($max-device-width, $blocks);
+    }
+  }
+}
+
+@function px2rem($px) {
+  @return #{math.div($px, $design-width) * $blocks}rem;
+}
+
+@function rem2px($rem) {
+  @return #{math.div($rem, $blocks) * $design-width}px;
+}
+
+@mixin aspect-ratio(
+  $position: relative,
+  $width: 100%,
+  $sub: null,
+  $aspectX: 1,
+  $aspectY: 1
+) {
+  overflow: hidden;
+  position: $position;
+  padding-top: percentage($aspectY / $aspectX);
+  width: $width;
+  height: 0;
+
+  @if $sub == null {
+    $sub: "*";
+  }
+  & > #{$sub} {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@mixin container-min-width() {
+  margin-right: auto;
+  margin-left: auto;
+  min-width: $min-device-width;
+}
+
+@mixin container-max-width() {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: $max-device-width;
+}
+
+@mixin font-size($fontSize) {
+  font-size: math.div($fontSize, $design-dpr);
+  [data-dpr="2"] & {
+    font-size: math.div($fontSize, $design-dpr) * 2;
+  }
+  [data-dpr="3"] & {
+    font-size: math.div($fontSize, $design-dpr) * 3;
+  }
+}

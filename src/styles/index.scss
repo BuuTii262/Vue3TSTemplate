@@ -1,0 +1,123 @@
+// @import "vant/lib/index.css";
+@import "./modules/func.scss";
+@import "./modules/transition.scss";
+@import "./modules/_utils.scss";
+@import "./modules/_border.scss";
+
+@import "./modules/theme_colors.scss";
+
+// @font-face {
+//   font-family: "DIN";
+//   src: url(@/assets/fonts/din-regular-webfont.ttf),
+//     url(@/assets/fonts/din-regular-webfont.woff),
+//     url(@/assets/fonts/din-regular-webfont.woff2);
+// }
+
+// @font-face {
+//   font-family: "SF Pro Display";
+//   src: url(@/assets/fonts/sfprodisplay-regular-webfont.ttf),
+//     url(@/assets/fonts/sfprodisplay-regular-webfont.woff),
+//     url(@/assets/fonts/sfprodisplay-regular-webfont.woff2);
+// }
+
+// @font-face {
+//   font-family: "SF Pro";
+//   src: url(@/assets/fonts/sf-pro-text-regular-webfont.ttf),
+//     url(@/assets/fonts/sf-pro-text-regular-webfont.woff),
+//     url(@/assets/fonts/sf-pro-text-regular-webfont.woff2);
+// }
+
+// @font-face {
+//   font-family: "BigruixianBlackGB";
+//   src: url(@/assets/fonts/BigruixianBlackGBV1.0.ttf);
+// }
+
+:root {
+  --default-color: var(--theme-primary);
+  --van-nav-bar-icon-color: rgb(9, 10, 10) !important;
+  --van-picker-confirm-action-color: var(--theme-primary) !important;
+  --van-gray-3: #fff !important;
+  --van-tabbar-item-active-color: var(--theme-primary) !important;
+  --van-nav-bar-title-primary-color: rgb(9, 10, 10) !important;
+  --van-nav-bar-title-font-size: px2rem(36) !important;
+  --van-nav-bar-primary-color: var(--theme-primary) !important;
+  --van-border-color: transparent;
+  --van-nav-bar-icon-color: var(--theme-text) !important;
+}
+
+.van-nav-bar__title {
+  color: var(--theme-text);
+}
+
+.app-background {
+  background-color: #fff; //if want to add theme add here
+}
+
+html {
+  @include root-font-size();
+  // scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  font-size: 16px;
+  font-family: SF Pro Display;
+  --van-tab-font-size: px2rem(32);
+  --van-tab-line-height: px2rem(32);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+button {
+  outline: none;
+  border: none;
+  background: transparent;
+}
+:root {
+  --van-checkbox-label-color: rgb(138, 138, 138) !important;
+}
+
+*::-webkit-scrollbar-track-piece {
+  background-color: #f8f8f8;
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+}
+input {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+.right {
+  text-align: right;
+}
+.flex {
+  flex: 1;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.van-skeleton__avatar {
+  border-radius: px2rem(6);
+}
+
+.van-notify {
+  height: var(--van-nav-bar-height);
+  font-size: px2rem(32);
+}
