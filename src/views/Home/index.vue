@@ -6,15 +6,28 @@
 
 <script lang="ts">
 import { defineComponent, toRefs, reactive, onMounted } from "vue";
+import { useStore } from "vuex";
+import { User } from "./../../types/index";
 
 export default defineComponent({
   name: "home",
   layout: "home",
   components: {},
   setup() {
+    const store = useStore();
     const state = reactive({});
+    const init = () => {
+      let user: User = {
+        name: "Mg Mga",
+        token: "IamTokey",
+        age: 19,
+      };
+      store.commit("SET_USER", user);
+    };
 
-    onMounted(() => {});
+    onMounted(() => {
+      init();
+    });
     return {
       ...toRefs(state),
     };
