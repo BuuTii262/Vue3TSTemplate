@@ -11,6 +11,10 @@ export const routes: Array<RouteRecordRaw> = [
     component: () => import("/@/layout/Default.vue"),
     children: [...other],
   },
+  //   {
+  //     path: "/:patchAll(\\S+)",
+  //     redirect: "/404",
+  //   },
 ];
 
 const router = createRouter({

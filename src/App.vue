@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <h1>Helo</h1>
-  </div>
+  <router-view #="{ Component }">
+    <component :is="Component" />
+  </router-view>
 </template>
 
 <script setup lang="ts"></script>
