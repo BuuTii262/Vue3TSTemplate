@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="home">
     <h1>This is home page</h1>
   </div>
 </template>
@@ -23,7 +23,10 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-h1 {
-  font-size: px2rem(30);
+.home {
+  h1 {
+    color: red;
+    font-size: px2rem(30);
+  }
 }
 </style>
