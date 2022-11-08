@@ -1,7 +1,7 @@
 import type { ConfigEnv, UserConfig, loadEnv } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
-import { resolve } from "path";
+import path from "path";
 
 export default ({ command, mode, ssrBuild }: ConfigEnv): UserConfig => {
   // const env = loadEnv(mode, process.cwd(), "");
@@ -11,7 +11,7 @@ export default ({ command, mode, ssrBuild }: ConfigEnv): UserConfig => {
     esbuild: {},
     resolve: {
       alias: {
-        "/@": resolve(__dirname, "./src"),
+        "/@": path.resolve(__dirname, "./src"),
       },
     },
     plugins: [vue(), vueJsx({})],

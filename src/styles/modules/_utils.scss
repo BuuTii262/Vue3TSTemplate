@@ -19,8 +19,8 @@ $max-device-width: 828px;
   @media screen and (max-width: $min-device-width) {
     font-size: math.div($min-device-width, $blocks);
   }
-  &[data-content-max] {
-    body[data-content-max] {
+  & {
+    body {
       @include container-max-width();
     }
     @media screen and (min-width: $max-device-width) {

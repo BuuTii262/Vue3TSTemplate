@@ -43,6 +43,8 @@ export default defineComponent({
   h1 {
     color: red;
     font-size: px2rem(30);
+    background: blue;
+    width: 100%;
   }
 }
 </style>
