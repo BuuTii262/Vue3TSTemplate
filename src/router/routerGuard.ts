@@ -1,26 +1,20 @@
-// import { Router } from "vue-router";
-// import store from "../store";
+import { Router } from "vue-router";
+import { useStore } from "vuex";
+let store = useStore();
 
-// const list = [
-//   "/home",
-//   "/login",
-//   "/register",
-//   "/agreements/privacy",
-//   "/agreements/service",
-// ];
+const list = ["/home", "/login", "/register"];
 
-// export function createRouterGuards(router: Router) {
-//   router.beforeEach((to, _from, next) => {
-//     const { path } = to;
-//     const token = store.state.user.token;
-//     const userdata = store.state.user.user;
-//     const isWhite = list.includes(path);
-//     const isYuebao = yuebao.includes(path);
-//     if (!token) {
-//       if (!isWhite) {
-//         next("/login");
-//       }
-//     }
-//     next();
-//   });
-// }
+export function createRouterGuards(router: Router) {
+  router.beforeEach((to, _from, next) => {
+    const { path } = to;
+    const token = store.state.user.token;
+    const userdata = store.state.user.user;
+    const isWhite = list.includes(path);
+    if (!token) {
+      if (!isWhite) {
+        next("/login");
+      }
+    }
+    next();
+  });
+}
