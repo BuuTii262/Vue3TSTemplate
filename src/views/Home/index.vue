@@ -23,6 +23,9 @@ export default defineComponent({
         age: 19,
       };
       store.commit("SET_USER", user);
+
+      let userForm = store.state.user.user;
+      console.log(userForm);
     };
 
     onMounted(() => {

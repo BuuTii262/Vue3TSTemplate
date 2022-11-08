@@ -1,9 +1,5 @@
-import { User } from "./../../types/index";
+import { User, UserState } from "./../../types/index";
 import { Commit } from "vuex";
-
-type UserState = {
-  user: User;
-};
 
 export default {
   state: (): UserState => ({

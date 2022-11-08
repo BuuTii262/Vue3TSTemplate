@@ -1,5 +1,7 @@
-import { createStore } from "vuex";
+import { createStore, useStore as baseUseStore } from "vuex";
 import user from "./modules/user";
+import { User, UserState } from "../types";
+import { InjectionKey } from "vue";
 
 import createPersistedState from "vuex-persistedstate";
 
