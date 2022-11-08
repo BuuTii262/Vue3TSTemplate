@@ -16,7 +16,7 @@ export default defineComponent({
   setup() {
     const store = useStore();
     const state = reactive({});
-    const init = () => {
+    const init = (): void => {
       let user: User = {
         name: "Mg Mga",
         token: "IamTokey",
