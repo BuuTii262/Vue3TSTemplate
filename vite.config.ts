@@ -1,10 +1,12 @@
-import type { ConfigEnv, UserConfig, loadEnv } from "vite";
+import type { ConfigEnv, UserConfig } from "vite";
+import { loadEnv } from "vite";
+
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import path from "path";
 
 export default ({ command, mode, ssrBuild }: ConfigEnv): UserConfig => {
-  // const env = loadEnv(mode, process.cwd(), "");
+  const env = loadEnv(mode, process.cwd(), "");
 
   return {
     base: "./",

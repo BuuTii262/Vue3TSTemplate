@@ -1,11 +1,13 @@
 <template>
   <div class="home">
     <h1>This is home page</h1>
+    <!-- <button class="btn" @click="openFb">clickme</button> -->
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, toRefs, reactive, onMounted } from "vue";
+import { stat } from "fs";
+import { defineComponent, toRefs, reactive, onMounted, computed } from "vue";
 import { useStore } from "vuex";
 import { User } from "./../../types/index";
 
@@ -15,7 +17,10 @@ export default defineComponent({
   components: {},
   setup() {
     const store = useStore();
-    const state = reactive({});
+
+    const state = reactive({
+      bannerLists: <any>[],
+    });
     const init = (): void => {
       let user: User = {
         name: "Mg Mga",
@@ -30,6 +35,10 @@ export default defineComponent({
 
     onMounted(() => {
       init();
+
+      store.dispatch("getBannerList", {}).then((res) => {
+        console.log("Here is data in onMounted", res);
+      });
     });
     return {
       ...toRefs(state),
@@ -45,6 +54,9 @@ export default defineComponent({
     font-size: px2rem(30);
     background: blue;
     width: 100%;
+  }
+  .btn {
+    background: red;
   }
 }
 </style>

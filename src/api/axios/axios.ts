@@ -1,10 +1,9 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
 import router from "../../router/index";
-import { useStore } from "vuex";
-let store = useStore();
+import store from "../../store";
 
 const service: AxiosInstance = axios.create({
-  baseURL: "http:10.10.10.20:8080",
+  baseURL: import.meta.env.VITE_APP_HOST,
   timeout: 30000,
   headers: {
     "Content-Type": "application/json",
@@ -17,9 +16,17 @@ const service: AxiosInstance = axios.create({
 service.interceptors.request.use(
   //Success request
   (config) => {
-    let token: string = store.state.user.user.token;
+    let token: string = store.state.user.user.token as string;
     if (token) {
-      config.headers!.Authorization = token;
+      config.headers = {
+        Authorization: token,
+        "Accept-Language": "en",
+      };
+    } else {
+      config.headers = {
+        Authorization: token,
+        "Accept-Language": "en",
+      };
     }
     return config;
   },
@@ -34,24 +41,25 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   //Success response
   (res) => {
-    if (res.data.err_code != 0) {
+    if (res.data.code != 0) {
       console.log(res.data.err_msg);
       return Promise.reject(res.data);
     }
+
     return res.data;
   },
   //Fail response
   (error) => {
-    switch (error.response.status) {
-      case 412:
-        router.push("/home");
-        localStorage.clear();
-        break;
-      case 401:
-        router.push("/home");
-        localStorage.clear();
-        break;
-    }
+    // switch (error.response.status) {
+    //   case 412:
+    //     router.push("/home");
+    //     localStorage.clear();
+    //     break;
+    //   case 401:
+    //     router.push("/home");
+    //     localStorage.clear();
+    //     break;
+    // }
     return Promise.reject(error);
   }
 );

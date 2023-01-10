@@ -9,7 +9,6 @@ export const homeRouters = [
       icon: "./images/tabbar/home.png",
       icon_select: "./images/tabbar/home_select.png",
     },
-    // component: () => import("/@/views/Home/index.vue"),
     component: () => import("./../../views/Home/index.vue"),
   },
 ];
