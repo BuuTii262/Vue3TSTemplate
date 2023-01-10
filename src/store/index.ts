@@ -1,6 +1,6 @@
 import { createStore, useStore as baseUseStore } from "vuex";
 import user from "./modules/user";
-import homeApiCall from "./requestApi/homeApiCall";
+import apiCall from "./requestApi/apiCall";
 import { User, UserState } from "../types";
 import { InjectionKey } from "vue";
 
@@ -15,7 +15,7 @@ export interface State {
 const store = createStore<State>({
   modules: {
     user,
-    homeApiCall,
+    apiCall,
   },
   // plugins: [
   //   createPersistedState({

@@ -2,6 +2,9 @@
   <div class="home">
     <h1>This is home page</h1>
     <!-- <button class="btn" @click="openFb">clickme</button> -->
+    <p>
+      {{ bannerLists }}
+    </p>
   </div>
 </template>
 
@@ -37,7 +40,7 @@ export default defineComponent({
       init();
 
       store.dispatch("getBannerList", {}).then((res) => {
-        console.log("Here is data in onMounted", res);
+        state.bannerLists = res;
       });
     });
     return {
