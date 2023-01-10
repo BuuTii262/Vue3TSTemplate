@@ -36,12 +36,15 @@ export default defineComponent({
       console.log(userForm);
     };
 
-    onMounted(() => {
-      init();
-
-      store.dispatch("getBannerList", {}).then((res) => {
+    const getBannerListsFn = () => {
+      store.dispatch("getBannerList").then((res) => {
         state.bannerLists = res;
       });
+    };
+
+    onMounted(() => {
+      init();
+      getBannerListsFn();
     });
     return {
       ...toRefs(state),
