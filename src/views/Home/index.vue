@@ -1,11 +1,10 @@
 <template>
   <div class="home">
     <h1>This is home page</h1>
-    <!-- <button class="btn" @click="openFb">clickme</button> -->
     <p>
       {{ bannerLists }}
     </p>
-    <button class="mybBtn">Login</button>
+    <van-button type="primary">Primary</van-button>
   </div>
 </template>
 

@@ -30,6 +30,10 @@ export default ({ command, mode, ssrBuild }: ConfigEnv): UserConfig => {
       }),
     ],
 
+    optimizeDeps: {
+      include: ["vant", "@vant/touch-emulator"],
+    },
+
     css: {
       preprocessorOptions: {
         less: {
