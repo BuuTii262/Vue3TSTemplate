@@ -1,9 +1,9 @@
 import type { ConfigEnv, UserConfig } from "vite";
 import { loadEnv } from "vite";
-
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import path from "path";
+import { createHtmlPlugin } from "vite-plugin-html";
 
 export default ({ command, mode, ssrBuild }: ConfigEnv): UserConfig => {
   const env = loadEnv(mode, process.cwd(), "");
@@ -16,7 +16,19 @@ export default ({ command, mode, ssrBuild }: ConfigEnv): UserConfig => {
         "/@": path.resolve(__dirname, "./src"),
       },
     },
-    plugins: [vue(), vueJsx({})],
+    plugins: [
+      vue(),
+      vueJsx({}),
+      createHtmlPlugin({
+        minify: true,
+        inject: {
+          data: {
+            title: env.VITE_APP_NAME,
+            // icon: env.VITE_FAV_ICON,
+          },
+        },
+      }),
+    ],
 
     css: {
       preprocessorOptions: {
