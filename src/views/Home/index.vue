@@ -5,6 +5,7 @@
     <p>
       {{ bannerLists }}
     </p>
+    <button class="mybBtn">Login</button>
   </div>
 </template>
 
@@ -63,6 +64,13 @@ export default defineComponent({
   }
   .btn {
     background: red;
+  }
+  .mybBtn {
+    display: block;
+    margin: 0 auto;
+    background: blue;
+    border-radius: px2rem(10);
+    color: #fff;
   }
 }
 </style>

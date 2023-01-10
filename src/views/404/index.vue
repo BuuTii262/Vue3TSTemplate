@@ -1,5 +1,5 @@
 <template>
-  <div class="container">404 not found</div>
+  <div class="fourOfour">404 not found</div>
 </template>
 
 <script lang="ts" setup>
@@ -15,4 +15,8 @@ import {
 onMounted(() => {});
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.fourOfour{
+  
+}
+</style>
