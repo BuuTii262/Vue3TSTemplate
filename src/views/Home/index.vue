@@ -5,14 +5,6 @@
       {{ bannerLists }}
     </p>
     <van-button type="primary">Primary</van-button>
-    <input
-      id="num-input"
-      type="text"
-      title="must be 3 or 8 digit"
-      v-model="myVal"
-    />
-
-    <van-button type="primary">Primary</van-button>
   </div>
 </template>
 
@@ -31,7 +23,6 @@ export default defineComponent({
 
     const state = reactive({
       bannerLists: <any>[],
-      myVal: "",
     });
     const init = (): void => {
       let user: User = {
